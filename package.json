@@ -1,0 +1,33 @@
+{
+  "name": "servermetrics",
+  "version": "1.0.0",
+  "description": "Script to send system metrics to Dataviz Studio over REST API",
+  "main": "metrics.js",
+  "scripts": {
+    "start": "node metrics.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micronatics/servermetrics.git"
+  },
+  "keywords": [
+    "metrics",
+    "dataviz",
+    "studio",
+    "rest",
+    "api",
+    "system",
+    "information",
+    "statistics"
+  ],
+  "author": "Micronatics",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micronatics/servermetrics/issues"
+  },
+  "homepage": "https://github.com/micronatics/servermetrics#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "systeminformation": "^5.9.17"
+  }
+}
