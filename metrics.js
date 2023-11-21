@@ -123,19 +123,19 @@ function getDiskStats()
                                     {
                                         device: serverName,
                                         name:  `${serverName}: Disk Used GB`,
-                                        value: parseInt(myDisk.used/1024/1024/1024),
+                                        value: Math.floor(myDisk.used/1024/1024/1024),
                                         category: 'System'
                                     },
                                     {
                                         device: serverName,
                                         name:  `${serverName}: Disk Free GB`,
-                                        value: parseInt(myDisk.available/1024/1024/1024),
+                                        value: Math.floor(myDisk.available/1024/1024/1024),
                                         category: 'System'
                                     },
                                     {
                                         device: serverName,
                                         name:  `${serverName}: Disk Size GB`,
-                                        value: parseInt(myDisk.size/1024/1024/1024),
+                                        value: Math.floor(myDisk.size/1024/1024/1024),
                                         category: 'System'
                                     }
                                 ];
@@ -196,8 +196,8 @@ function checkMemUsage()
 {
     si.mem().then(memData =>
     {
-        const memAvailableMB = parseInt(memData.available/1024/1024);
-        const memTotalMB = parseInt(memData.total/1024/1024);
+        const memAvailableMB = Math.floor(memData.available/1024/1024);
+        const memTotalMB = Math.floor(memData.total/1024/1024);
         const memUsedPerc = parseFloat(memData.used*100/memData.total).toFixed(2);
         const memLoadPerc = parseFloat((memData.total-memData.available)*100/memData.total).toFixed(2);
 
@@ -254,8 +254,8 @@ function checkProcessess()
     {
         for (let i=0; i<data.length; i++)
         {
-            const cpuUsage = parseInt(data[i].cpu);
-            const memUsage = parseInt(data[i].mem);
+            const cpuUsage = Math.floor(data[i].cpu);
+            const memUsage = Math.floor(data[i].mem);
             const runState = data[i].running ? 1 : 0;
 
             const processMetrics = [
